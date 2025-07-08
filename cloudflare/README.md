@@ -1,3 +1,7 @@
+# WAF Rules Cloudflare
+
+This list is mostly taken and adapted from: https://github.com/sefinek/Cloudflare-WAF-Expressions
+
 ### Block Common Scan Patterns: Predecence: 1, Action: Block
 
 ```js
