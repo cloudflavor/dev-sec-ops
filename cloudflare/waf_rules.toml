@@ -1,0 +1,399 @@
+name = "Block Common Scan Patterns"
+action = "block"
+precedence = 1
+
+[group]
+operator = "or"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "contains"
+value = "\\"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "contains"
+value = "%5c"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "contains"
+value = "%2f"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "eq"
+value = "/backup"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "eq"
+value = "/git"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "eq"
+value = "/old"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*.env*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*.log*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*.py*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*.sh*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*.yaml*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*.yml*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*auth.json*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*conf.*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*crlfinjection*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*curl%20*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*curl+*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*fancyupload*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*openai.yaml*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*php.ini*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*phpinfo*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*.php*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*phpsysinfo*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*settings.local*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*settings.prod*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*wget%20*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*wget+*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*passwd*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*shadow*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*proc/self*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*metadata.google.internal*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*169.254.169.254*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*composer.json*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*package-lock.json*"
+
+[[group.rules]]
+operator = "and"
+
+[[group.rules.sub]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*/.*"
+
+[[group.rules.sub]]
+field = "http.request.uri.path"
+operator = "not_starts_with"
+value = "/.well-known/"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*//*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*/actuator*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*/wp-content*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*/wp-login*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*/wp-json*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*/dbadmin*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*/debug*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*/etc/passwd"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*/phpmyadmin*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*/readme*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*/sito*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*/ssh*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*/webdav*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*/~adm*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*/~sysadm*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*/~webmaster*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*appsettings*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*authorized_keys*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*backup.*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*docker-compose*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*dockerfile*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*dump.*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*file_put_contents*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*id_rsa*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*keys.json*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*pboot:if*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*server.key*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*sftp*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*wlwmanifest*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*www-sql*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*_all_dbs*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*_debugbar*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*~ftp*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*~tmp*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*.asp"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*.aspx"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*.asa"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*.asax"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*global.asa*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*web.config*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*trace.axd*"
+
+[[group.rules]]
+field = "http.request.uri.path"
+operator = "wildcard"
+value = "*elmah.axd*"
